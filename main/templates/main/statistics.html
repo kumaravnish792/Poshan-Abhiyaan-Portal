@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+
+          // Load the Visualization API and the piechart package.
+          google.load('visualization', '1.0', {'packages':['corechart']});
+
+          // Set a callback to run when the Google Visualization API is loaded.
+          google.setOnLoadCallback(drawChart);
+
+          // Callback that creates and populates a data table,
+          // instantiates the pie chart, passes in the data and
+          // draws it.
+          function drawChart() {
+
+            // Create the data table.
+            /*var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');    
+            data.addColumn('number', 'Slices');
+            data.addRows([
+              ['Mushrooms', 3],
+              ['Onions', 1],
+              ['Olives', 1],
+              ['Zucchini', 1],
+              ['Pepperoni', 2]
+            ]);*/
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');    
+            data.addColumn('number', 'Slices');
+            data.addRows([
+              ['Transportation Issue', 3],
+              ['Shyness', 1],
+              ['Lack Of Info', 1],
+              ['Process COmplexity', 1],
+              ['ignorance', 2]
+            ]);
+
+            // Create the data table.
+            var data2 = new google.visualization.DataTable();
+            data2.addColumn('string', 'Topping');
+            data2.addColumn('number', 'Slices');
+            data2.addRows([
+            
+                  ['Jharkhand',  40],
+                  ['Oddissa',  30],
+                  ['Bihar',  50],
+                  ['West Bengal',  25],
+                  ['Assam',  8],
+                  ['Punjab',  10],
+                      ['Haryana',  15],
+                      ['Gujrat',  18],
+                      ['Rajasthan',  28],
+                      ['Madhya Pradesh',  32],
+                      ['Uttar Pradesh',  10],
+                      ['Andhra Pradesh',  20],
+                      ['Kerala',  12],
+                      ['Tamil Nadu',  23],
+                      ['Mizoram',  10],
+                      ['Mumbai',  35],
+                      ['Delhi',  8],
+            ]);
+
+            var data3 = new google.visualization.DataTable();
+            data3.addColumn('string', 'Year');
+            data3.addColumn('number', 'BMI');
+            data3.addRows([
+               ['Dose_1',  14.4],
+               ['Dose_2',  15.6],
+               ['Dose_3',  16.2],
+               ['Dose_4',  17.0],
+               ['Dose_5',  18.2],
+               ['Dose_6',  18.8],
+               ['Dose_7',  19.2],
+               ['Dose_8',  20.5]
+            ]);
+
+            // Set chart options
+            var options = {'title':'Reasons For Absence',
+                            backgroundColor: 'pink',
+                           'height':400};
+            // Set chart options
+            var options2 = {'title':'Number Of Centers in state',
+                            backgroundColor: '#F7F3CE',
+                           'height':400};
+            // Set chart options
+            var options3 = {'title':'Growth Of Patients',
+                    backgroundColor: '#F1D1B0',
+                           'height':400};
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+            var chart2 = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
+            chart2.draw(data2, options2);
+            var chart3 = new google.visualization.LineChart(document.getElementById('chart_div3'));
+            chart3.draw(data3, options3);
+
+          }
+          $(window).on("throttledresize", function (event) {
+              var options = {
+                  width: '100%',
+              };
+
+              var data = google.visualization.arrayToDataTable([]);
+              drawChart(data, options);
+              });
+          $(window).on("throttledresize", function (event) {
+              var options2 = {
+                  width: '100%',
+              };
+
+              var data2 = google.visualization.arrayToDataTable([]);
+              drawChart(data2, options2);
+              });
+          $(window).on("throttledresize", function (event) {
+              var options3 = {
+                  width: '100%',
+              };
+
+              var data3 = google.visualization.arrayToDataTable([]);
+              drawChart(data3, options3);
+              });
+        </script>
+      </head>
+
+      <body>
+        <!--Divs that will hold the charts-->
+        <div id="chart_div"></div>
+        <div id="chart_div2"></div>
+        <div id="chart_div3"></div>
+      </body>
+    </html>
